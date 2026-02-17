@@ -32,6 +32,6 @@ jobs:
         run: |
           git config user.name "rss-bot"
           git config user.email "rss-bot@users.noreply.github.com"
-          git add site/rss.xml
+          git add rss.xml
           git commit -m "Update RSS" || echo "No changes"
           git push
