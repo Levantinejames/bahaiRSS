@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Daily PDF Quote</title>
+  <link>https://example.com</link>
+  <description>Short quotes selected automatically from PDFs.</description>
+  <lastBuildDate>Tue, 17 Feb 2026 00:08:20 GMT</lastBuildDate>
+  <item>
+    <title>Quote from light-of-the-world</title>
+    <link>https://github.com/Levantinejames/bahaiRSS/blob/main/pdfs/light-of-the-world.pdf</link>
+    <guid isPermaLink="false">light-of-the-world.pdf-2026-02-17T00:08:20.669410</guid>
+    <pubDate>Tue, 17 Feb 2026 00:08:20 GMT</pubDate>
+    <description><![CDATA[<p>The priests and clerics held fast unto these words and remained veiled from the light of certitude that shone forth from the luminous Horizon. In brief, on the day of the Revelation of the divine Light, the peoples of the world invariably cleaved unto the outward meanings of the verses of the Book, and thus deprived themselves of the grace of the Almighty. Worse still, most of the divines used their interpretation of the Holy Books to decree the death of these sovereign Lords of all existence, these Luminaries of the visible and invisible realms.</p><p><em>Source:</em> light-of-the-world.pdf</p>]]></description>
+  </item>
+</channel>
+</rss>
