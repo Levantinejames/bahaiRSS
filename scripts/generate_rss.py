@@ -65,7 +65,7 @@ def xml_escape(s: str) -> str:
             .replace("'", "&apos;"))
 
 def main():
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
+   
 
     pdfs = sorted(PDF_DIR.glob("*.pdf"))
     if not pdfs:
