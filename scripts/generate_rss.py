@@ -31,7 +31,7 @@ def extract_text(pdf_path: Path, max_pages=12) -> str:
     return clean_text("\n".join(chunks))
 
 def split_sentences(text: str):
-    s = re.split(r'(?<=[.!?])\s+', text)
+    s = re.split(r'(?<=[.!?؟。])\s+', text)
     return [x.strip() for x in s if x.strip()]
 
 def pick_quote(sentences):
