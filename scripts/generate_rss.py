@@ -20,7 +20,7 @@ def clean_text(t: str) -> str:
     t = re.sub(r"\s+", " ", t).strip()
     return t
 
-def extract_text(pdf_path: Path, max_pages=50) -> str:
+def extract_text(pdf_path: Path, max_pages=16) -> str:
     doc = fitz.open(pdf_path)
     pages = min(len(doc), max_pages)
     chunks = []
