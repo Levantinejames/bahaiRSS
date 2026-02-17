@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Daily PDF Quote</title>
+  <link>https://example.com</link>
+  <description>Short quotes selected automatically from PDFs.</description>
+  <lastBuildDate>Tue, 17 Feb 2026 04:26:59 GMT</lastBuildDate>
+  <item>
+    <title>Quote from light-of-the-world</title>
+    <link>https://github.com/Levantinejames/bahaiRSS/blob/main/pdfs/light-of-the-world.pdf</link>
+    <guid isPermaLink="false">light-of-the-world.pdf-2026-02-17T04:26:59.730582</guid>
+    <pubDate>Tue, 17 Feb 2026 04:26:59 GMT</pubDate>
+    <description><![CDATA[<p>It will soon be complete and will be most firm and solid. Indeed, it is not a cistern, but a sea! And now concerning the visit of the holy leaf of the Blessed Tree: God willing, circumstances will soon make this advisable, and permission will then be granted. Upon thee be greetings and praise.</p><p><em>Source:</em> light-of-the-world.pdf</p>]]></description>
+  </item>
+</channel>
+</rss>
