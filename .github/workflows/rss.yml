@@ -2,7 +2,7 @@ name: Generate RSS
 
 on:
   schedule:
-    - cron: "15 8 * * *"   # daily at 08:15 UTC
+    - cron: "0 */3 * * *"
   workflow_dispatch:
 
 permissions:
