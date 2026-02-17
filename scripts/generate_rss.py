@@ -7,13 +7,12 @@ import fitz  # PyMuPDF
 PDF_DIR = Path("pdfs")
 RSS_PATH = Path("rss.xml")
 
-MAX_SENTENCES = 4
-MIN_SENTENCES = 2
+MAX_SENTENCES = 8
+MIN_SENTENCES = 5
 
 CHANNEL_TITLE = "Daily PDF Quote"
 CHANNEL_DESC = "Short quotes selected automatically from PDFs."
-# Replace later with your GitHub Pages URL once enabled; RSS still works without it.
-CHANNEL_LINK = "https://example.com"
+CHANNEL_LINK = "https://www.bahai.org"
 
 def clean_text(t: str) -> str:
     t = t.replace("\u00ad", "")
@@ -52,7 +51,7 @@ def pick_quote(sentences):
     start_idx = random.choice(candidates)
     for n in range(MAX_SENTENCES, MIN_SENTENCES - 1, -1):
         chunk = " ".join(sentences[start_idx:start_idx+n]).strip()
-        if 300 <= len(chunk) <= 750:
+        if 450 <= len(chunk) <= 750:
             return chunk
 
     return sentences[start_idx][:750]
