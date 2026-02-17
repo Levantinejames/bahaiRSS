@@ -20,7 +20,7 @@ def clean_text(t: str) -> str:
     t = re.sub(r"\s+", " ", t).strip()
     return t
 
-def extract_text(pdf_path: Path, max_pages=12) -> str:
+def extract_text(pdf_path: Path, max_pages=50) -> str:
     doc = fitz.open(pdf_path)
     pages = min(len(doc), max_pages)
     chunks = []
@@ -52,10 +52,10 @@ def pick_quote(sentences):
     start_idx = random.choice(candidates)
     for n in range(MAX_SENTENCES, MIN_SENTENCES - 1, -1):
         chunk = " ".join(sentences[start_idx:start_idx+n]).strip()
-        if 180 <= len(chunk) <= 650:
+        if 300 <= len(chunk) <= 750:
             return chunk
 
-    return sentences[start_idx][:650]
+    return sentences[start_idx][:7 50]
 
 def xml_escape(s: str) -> str:
     return (s.replace("&", "&amp;")
@@ -82,8 +82,7 @@ def main():
     now = dt.datetime.utcnow()
     pubdate = now.strftime("%a, %d %b %Y %H:%M:%S GMT")
 
-    # Link to the PDF in your GitHub repo (works even before Pages is enabled)
-    # TODO: replace <your-username> and <your-repo>
+    
     pdf_link = f"https://github.com/Levantinejames/bahaiRSS/blob/main/pdfs/{pdf.name}"
 
     description_html = f"<p>{xml_escape(quote)}</p><p><em>Source:</em> {xml_escape(pdf.name)}</p>"
@@ -96,7 +95,7 @@ def main():
   <description>{xml_escape(CHANNEL_DESC)}</description>
   <lastBuildDate>{xml_escape(pubdate)}</lastBuildDate>
   <item>
-    <title>{xml_escape('Quote from ' + pdf.stem)}</title>
+    <title>{xml_escape('')}</title>
     <link>{xml_escape(pdf_link)}</link>
     <guid isPermaLink="false">{xml_escape(pdf.name + '-' + now.isoformat())}</guid>
     <pubDate>{xml_escape(pubdate)}</pubDate>
