@@ -5,8 +5,7 @@ from pathlib import Path
 import fitz  # PyMuPDF
 
 PDF_DIR = Path("pdfs")
-OUT_DIR = Path("site")
-RSS_PATH = OUT_DIR / "rss.xml"
+RSS_PATH = Path("rss.xml")
 
 MAX_SENTENCES = 4
 MIN_SENTENCES = 2
