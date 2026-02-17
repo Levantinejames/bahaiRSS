@@ -55,7 +55,7 @@ def pick_quote(sentences):
         if 300 <= len(chunk) <= 750:
             return chunk
 
-    return sentences[start_idx][:7 50]
+    return sentences[start_idx][:750]
 
 def xml_escape(s: str) -> str:
     return (s.replace("&", "&amp;")
