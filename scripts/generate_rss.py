@@ -13,7 +13,6 @@ MIN_SENTENCES = 5
 CHANNEL_TITLE = "Daily PDF Quote"
 CHANNEL_DESC = "Short quotes selected automatically from PDFs."
 CHANNEL_LINK = "https://www.bahai.org"
-BREAK_REGEX = r"ص\s*\d+"
 
 def clean_text(t: str) -> str:
     t = t.replace("\u00ad", "")
@@ -35,6 +34,7 @@ def split_sentences(text: str):
     return [x.strip() for x in s if x.strip()]
 
 def pick_quote(sentences):
+    # Prefer sentences that look like prose (not URLs/numbers-heavy)
     candidates = []
     for i, sent in enumerate(sentences):
         if len(sent) < 40 or len(sent) > 220:
@@ -51,20 +51,10 @@ def pick_quote(sentences):
     start_idx = random.choice(candidates)
     for n in range(MAX_SENTENCES, MIN_SENTENCES - 1, -1):
         chunk = " ".join(sentences[start_idx:start_idx+n]).strip()
-
-        # ✅ NEW: cut off at your marker (page/section)
-        chunk = re.split(BREAK_REGEX, chunk, maxsplit=1)[0].strip()
-
-        # (optional) clean trailing punctuation/spaces after cutting
-        chunk = chunk.rstrip(" -–—:؛،")
-
         if 450 <= len(chunk) <= 750:
             return chunk
 
-    # fallback
-    chunk = sentences[start_idx][:750]
-    chunk = re.split(BREAK_REGEX, chunk, maxsplit=1)[0].strip()
-    return chunk
+    return sentences[start_idx][:750]
 
 def xml_escape(s: str) -> str:
     return (s.replace("&", "&amp;")
